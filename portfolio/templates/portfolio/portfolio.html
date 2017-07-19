@@ -1,6 +1,6 @@
 {% load staticfiles %}
 {% load mathfilters %}
-<!DOCTYPE html>
+
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
@@ -39,6 +39,14 @@
         <tr class="bg-info">
 
             <th>Cust ID</th>
+            <th>Symbol</th>
+            <th>Name</th>
+            <th>Shares</th>
+            <th>Initial Stock Price</th>
+            <th>Initial Stock Value</th>
+            <th>Purchase Date</th>
+            <th>Current Stock Price</th>
+            <th>Current Stock Value</th>
 
         </tr>
         </thead>
@@ -46,8 +54,12 @@
         {% for stock in stocks %}
             <tr>
                 <td>{{ stock.customer }}</td>
-
-
+                <td>{{ stock.symbol}}</td>
+                <td>{{ stock.name}}</td>
+                <td>{{ stock.shares}}</td>
+                <td>{{ stock.purchase_price}}</td>
+                <td>{{ stock.shares|mul:stock.purchase_price}}</td>
+                <td>{{ stock.purchase_date}}</td>
             </tr>
         {% endfor %}
         </tbody>

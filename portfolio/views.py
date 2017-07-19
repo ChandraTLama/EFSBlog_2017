@@ -127,7 +127,7 @@ def investment_edit(request, pk):
             return render(request, 'portfolio/investment_list.html', {'investments': investments})
     else:
         # print("else")
-        form = InvestmentForm(instance=stock)
+        form = InvestmentForm(instance=investment)
         return render(request, 'portfolio/investment_edit.html', {'form': form})
 
 
@@ -141,9 +141,17 @@ def investment_delete(request, pk):
 
 @ login_required
 def portfolio(request,pk):
-    customer = get_object_or_404(Customer, pk =pk)
-    customers = Customer.objects.filter( created_date__lte =timezone.now())
-    investments =Investment.objects.filter( customer =pk)
-    stocks = Stock.objects.filter( customer =pk)
-    sum_acquired_value = Investment.objects.filter( customer =pk).aggregate(Sum( 'acquired_value' ))
-    return render(request, 'portfolio/portfolio.html', { 'customers': customers, 'investments' :investments,'stocks' : stocks,'sum_acquired_value' : sum_acquired_value,})
+     customer = get_object_or_404(Customer, pk =pk)
+     customers = Customer.objects.filter( created_date__lte =timezone.now())
+     investments =Investment.objects.filter( customer =pk)
+     stocks = Stock.objects.filter( customer =pk)
+     sum_acquired_value = Investment.objects.filter( customer =pk).aggregate(Sum( 'acquired_value' ))
+     return render(request, 'portfolio/portfolio.html', { 'customers': customers, 'investments' :investments,'stocks' : stocks,'sum_acquired_value' : sum_acquired_value,})
+
+# def portfolio(request):
+#     customers = Customer.objects.filter(created_date__lte=timezone.now())
+#     investments =Investment.objects.all()
+#     stocks = Stock.objects.all()
+#     sum_recent_value = Investment.objects.all().aggregate(Sum('recent_value'))
+#     sum_acquired_value = Investment.objects.all().aggregate(Sum('acquired_value'))
+#     return render(request, 'customers/portfolio.html', {'customers': customers, 'investments': investments, 'stocks': stocks, 'sum_recent_value': sum_recent_value, 'sum_acquired_value': sum_acquired_value,})
