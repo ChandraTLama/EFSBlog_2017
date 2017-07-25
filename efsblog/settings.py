@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'mathfilters',
     'portfolio',
+
 ]
 
 MIDDLEWARE = [
@@ -59,7 +60,8 @@ ROOT_URLCONF = 'efsblog.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+            'DIRS': [],
+        #'DIRS': [os.path.join(BASE_DIR, 'templates'),],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -81,10 +83,10 @@ WSGI_APPLICATION = 'efsblog.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'd1s8nvvcjp72tm',
-        'USER': 'feeincbotybpjz',
-        'PASSWORD': 'e363ce7dc545e46fe6d3714be92301130789923250802ba513e3df9629564a11',
-        'HOST': 'ec2-23-21-158-253.compute-1.amazonaws.com',
+        'NAME': 'd9bk876dmnebet',
+        'USER': 'kfghegxfwhjmom',
+        'PASSWORD': '74ea3313acaff413fde2025e0fd63f146e6afbcb169a68c1119a813c67b6429a',
+        'HOST': 'ec2-54-235-80-137.compute-1.amazonaws.com',
         'PORT': '5432',
 
     }
@@ -156,5 +158,19 @@ try:
     from .local_settings import *
 except ImportError:
     pass
+
+#ACCOUNT_ACTIVATION_DAYS = 7
+
+#forgot password sttings to send email for link
+
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = 'testblog7840@gmail.com'
+SERVER_EMAIL = 'testblog7840@gmail.com'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'testblog7840@gmail.com'
+EMAIL_HOST_PASSWORD = 'C9841840C**'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
 
 
