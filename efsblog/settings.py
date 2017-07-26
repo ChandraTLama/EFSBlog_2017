@@ -61,8 +61,8 @@ ROOT_URLCONF = 'efsblog.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-            'DIRS': [],
-        #'DIRS': [os.path.join(BASE_DIR, 'templates'),],
+        #'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'portfolio', 'templates'),],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -172,6 +172,5 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = 'testblog7840@gmail.com'
 EMAIL_HOST_PASSWORD = 'C9841840C**'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-
 
 

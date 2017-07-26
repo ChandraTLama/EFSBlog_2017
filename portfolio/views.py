@@ -231,4 +231,3 @@ def mutualfund_delete(request, pk):
     mutualfunds = Mutualfund.objects.filter( purchased_date__lte=timezone.now())
     return render(request, 'portfolio/mutualfund_list.html', { 'mutualfunds': mutualfunds})
 
-
