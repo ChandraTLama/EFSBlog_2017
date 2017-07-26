@@ -99,8 +99,7 @@
                 <td>{{ investment.acquired_date}}</td>
                 <td>{{ investment.recent_value}}</td>
                 <td>{{ investment.recent_date}}</td>
-                <!--td>{{ investment.recent_value|sub:investment.acquired_value}}</td-->
-                <td>{{  investment.results_by_investment}}</td>
+                <td>{{ investment.results_by_investment}}</td>
 
             </tr>
         {% endfor %}
@@ -149,7 +148,7 @@
 
 
 <div class="row">
-    <h2 style="padding-left: 15Px">Summary Details</h2>
+    <h2 style="padding-left: 15Px">Summary</h2>
 </div>
 
 
@@ -159,9 +158,9 @@
         <thead>
         <tr class="bg-info">
 
-            <th>Total of Initial Investments</th>
-            <th>Total of Current Investments</th>
-            <th>Results</th>
+            <th>Total Initial Investments</th>
+            <th>Total Current Investments</th>
+            <th>Result</th>
 
         </tr>
         </thead>
@@ -170,7 +169,7 @@
             <tr>
                 <td>{{ sum_acquired_value.acquired_value__sum }}</td>
                 <td>{{ sum_recent_value.recent_value__sum  }}</td>
-                <td> {{ sum_recent_value.recent_value__sum|sub:sum_acquired_value.acquired_value__sum  }}</td>
+                <td>{{ sum_recent_value.recent_value__sum|sub:sum_acquired_value.acquired_value__sum }}</td>
 
             </tr>
 
@@ -183,9 +182,9 @@
         <thead>
         <tr class="bg-info">
 
-            <th>Total of Initial Mutualfund </th>
-            <th>Total of Current Mutualfund </th>
-            <th>Results</th>
+            <th>Total Initial Mutualfund </th>
+            <th>Total Current Mutualfund </th>
+            <th>Result</th>
 
 
         </tr>

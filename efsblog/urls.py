@@ -24,5 +24,4 @@ urlpatterns = [
     url(r'^accounts/logout/$', views.logout, name='logout', kwargs={'next_page': '/'}),
     url(r'^accounts/', include('registration.backends.simple.urls')),
 
-
 ]
